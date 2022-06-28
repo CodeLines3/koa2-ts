@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target":"ESNext",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "outDir": "./build",
+    "esModuleInterop": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "watch": true
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "views",
+    "public",
+    "typeings"
+  ]
+}
