@@ -6,5 +6,5 @@ const UserScheme: Schema = new Schema({
   addr: String,
 });
 
-const User = model('Category', UserScheme);
-export default User;
+const User = model('user', UserScheme);
+module.exports = User;

@@ -42,7 +42,7 @@ requireGlob(['./routes/**/*']).then(function (modules) {
  * Get port from environment and store in Express.
  * app.set('port', port);
  */
-const port = normalizePort(process.env.PORT || '3000');
+const port: number = normalizePort(process.env.PORT || '3000');
 
 app.listen(port, function() {
   console.log('listening  port：' + port)

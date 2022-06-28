@@ -10,4 +10,4 @@ const connectMongo = async () => {
       })
 }
 
-export default connectMongo;
+module.exports = connectMongo;
