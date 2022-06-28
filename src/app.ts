@@ -16,9 +16,8 @@ connectMongo();
 
 // error handler
 onerror(app);
-
 // middlewares
-app.use(koastatic(__dirname + "/public"))
+app.use(koastatic(process.cwd() + "/public"))
 .use(json())
 .use(logger())
 .use(
