@@ -1,10 +1,11 @@
-import { model, Schema } from 'mongoose';
-const UserScheme: Schema = new Schema({
-  id: { type: String, unique: true },
-  name: String,
+import { Document, model, Schema, Types } from 'mongoose';
+const UserSchema: Schema = new Schema({
+  name: { type: String, unique: true, require: true },
   age: Number,
-  addr: String,
+  addr: String
 });
-
-const User = model('user', UserScheme);
+UserSchema.set('toJSON', { versionKey: false, transform: (doc: Document, ret: any) => {
+  // delete ret._id
+} });
+const User = model('user', UserSchema);
 export default User;

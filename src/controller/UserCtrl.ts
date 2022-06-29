@@ -8,12 +8,10 @@ export default class UserCtrl {
   public static async addUser(ctx: Context) {
     const { name, age = 26 } = ctx.query;
     const UserSchema = new User({
-      id: nanoid(),
       name,
-      age,
-      addr: 'sddfs',
+      age
     });
-    const data = await UserSchema.save();
+    const data = await UserSchema.save({safe: true});
     if (data) {
       ctx.body = ResponseData(200, data)
     } else {
