@@ -8,7 +8,8 @@ import views from "koa-views";
 import json from "koa-json";
 import onerror from "koa-onerror";
 import logger from "koa-logger";
-import koastatic from "koa-static";
+import KoaStatic from "koa-static";
+import Cors from 'koa2-cors';
 const app = new Koa();
 
 // link mongodb
@@ -17,7 +18,8 @@ connectMongo();
 // error handler
 onerror(app);
 // middlewares
-app.use(koastatic(process.cwd() + "/public"))
+app.use(KoaStatic(process.cwd() + "/public"))
+.use(Cors())
 .use(json())
 .use(logger())
 .use(

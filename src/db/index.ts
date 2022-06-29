@@ -1,13 +1,14 @@
-import { connect } from 'mongoose';
-import { DBLink } from './dbconfig';
+import { connect, connection } from "mongoose";
+import { DBLink } from "./dbconfig";
 const connectMongo = async () => {
-  await connect(DBLink)
-      .then(() => {
-          console.log('数据库连接成功')
-      })
-      .catch(err => {
-          console.log('数据库连接失败', err)
-      })
-}
-
-module.exports = connectMongo;
+  await connect(DBLink, {
+    keepAlive: true,
+  })
+    .then(() => {
+      console.log("数据库连接成功");
+    })
+    .catch((err) => {
+      console.log("数据库连接失败", err);
+    });
+};
+export default connectMongo;

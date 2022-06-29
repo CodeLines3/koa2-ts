@@ -1,17 +1,23 @@
-
 import Router from "koa-router";
 import { validator } from './../middlewares/index';
 import Joi from 'joi';
-import { UserCtrl } from "../controller/UserCtrl";
+import UserCtrl from "../controller/UserCtrl";
 const router = new Router({
   prefix: '/users'
 });
 // 添加用户验证
-const pushUserSchema = {
-  username: Joi.string().required()
+const saveRule = {
+  name: Joi.string().required(),
+  age: Joi.number()
+};
+// 移除用户
+const removeRule = {
+  id: Joi.string().required()
 };
 
-router.get('/', validator(pushUserSchema), UserCtrl.getUsers)
-      .post('/', UserCtrl.addUser)
+router.get('/', UserCtrl.getUsers)
+      .get('/save', validator(saveRule), UserCtrl.addUser)
+      .del('/remove/:id', validator(removeRule), UserCtrl.removeUsers)
+      .post('/update', UserCtrl.upadteUsers)
 
 module.exports = router

@@ -14,13 +14,15 @@ const koa_json_1 = __importDefault(require("koa-json"));
 const koa_onerror_1 = __importDefault(require("koa-onerror"));
 const koa_logger_1 = __importDefault(require("koa-logger"));
 const koa_static_1 = __importDefault(require("koa-static"));
+const koa2_cors_1 = __importDefault(require("koa2-cors"));
 const app = new koa_1.default();
 // link mongodb
 (0, db_1.default)();
 // error handler
 (0, koa_onerror_1.default)(app);
 // middlewares
-app.use((0, koa_static_1.default)(__dirname + "/public"))
+app.use((0, koa_static_1.default)(process.cwd() + "/public"))
+    .use((0, koa2_cors_1.default)())
     .use((0, koa_json_1.default)())
     .use((0, koa_logger_1.default)())
     .use((0, koa_bodyparser_1.default)({

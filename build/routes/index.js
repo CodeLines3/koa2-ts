@@ -5,13 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const koa_router_1 = __importDefault(require("koa-router"));
 const router = new koa_router_1.default();
-router.get('/', async (ctx, next) => {
+router.get('/', async (ctx) => {
     ctx.body = 'Hello Koa 232!';
-});
-router.get('/string', async (ctx, next) => {
-    ctx.body = 'koa2 string';
-});
-router.get('/json', async (ctx, next) => {
+})
+    .get('/json', async (ctx) => {
     ctx.body = {
         title: 'koa2 json'
     };

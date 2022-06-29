@@ -7,10 +7,13 @@ export function validator(schemas: Joi.PartialSchemaMap<any>) {
     let data: any;
     switch (ctx.method) {
       case 'GET':
-        data = ctx.request.query;
+        data = ctx.query;
         break;
       case 'POST':
         data = ctx.request.body;
+        break;
+      case 'DELETE':
+        data = ctx.params;
         break;
       default:
         break;

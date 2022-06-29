@@ -34,7 +34,7 @@
         "no-empty-interface": true,
         "no-parameter-reassignment": true,
         "prefer-for-of": true,
-        "await-promise": true,
+        "await-promise": false,
         "curly": true,
         "forin": true,
         "no-arg": true,
@@ -75,7 +75,7 @@
             true,
             120
         ],
-        "no-default-export": true,
+        "no-default-export": false,
         "no-duplicate-imports": true,
         "align": [
             true,
