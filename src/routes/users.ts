@@ -1,6 +1,6 @@
 import Router from "koa-router";
-import { validator } from './../middlewares/index';
 import Joi from 'joi';
+import { validator } from './../middlewares/index';
 import UserCtrl from "../controller/UserCtrl";
 const router = new Router({
   prefix: '/users'

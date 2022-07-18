@@ -50,6 +50,7 @@
         "no-sparse-arrays": true,
         "no-string-throw": true,
         "no-switch-case-fall-through": true,
+        "one-variable-per-declaration": true,
         "no-unsafe-finally": true,
         "no-unused-expression": true,
         "no-use-before-declare": true,

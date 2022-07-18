@@ -19,7 +19,7 @@ export default class UserCtrl {
     }
   }
   // 查询所有用户
-  public static async getUsers(ctx: Context) {
+  public static async getUsers(ctx: Context, next){
     const data = await User.find();
     ctx.body = ResponseData(200, data);
   }
