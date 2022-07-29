@@ -9,7 +9,13 @@
     "strict": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "watch": true
+    "watch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
   },
   "include": [
     "./src/**/*"

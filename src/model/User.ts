@@ -1,6 +1,7 @@
 import { Document, model, Schema, Types } from 'mongoose';
 const UserSchema: Schema = new Schema({
   name: { type: String, unique: true, require: true },
+  password: String,
   age: Number,
   addr: String
 });

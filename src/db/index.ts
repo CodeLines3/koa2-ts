@@ -1,4 +1,4 @@
-import { connect, connection } from "mongoose";
+import { connect } from "mongoose";
 import { DBLink } from "./dbconfig";
 const connectMongo = async () => {
   await connect(DBLink, {
